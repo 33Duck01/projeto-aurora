@@ -1,0 +1,49 @@
+<!-- =============================================
+  RELATÓRIO DA H-9 — DOCUMENTO CENSURADO
+============================================== -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Relatório da H-9 — Umbra</title>
+  <style>
+    :root{ --bg:#0b0c10; --paper:#e8e3d7; --ink:#111; --bar:#000; --accent:#c1121f; }
+    html,body{height:100%}
+    body{ margin:0; background:var(--bg); display:grid; place-items:center; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; }
+    .sheet{ background:var(--paper); color:var(--ink); width:min(920px, 92vw); padding:48px 36px; box-shadow:0 30px 80px rgba(0,0,0,.45); border:1px solid #cabfa9; position:relative }
+    .stamp{ position:absolute; right:24px; top:24px; border:2px solid var(--accent); color:var(--accent); padding:6px 10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; transform:rotate(-6deg); }
+    h1{ margin:0 0 10px 0; font-size:clamp(20px, 5vw, 36px); letter-spacing:.03em; }
+    h1 small{ display:block; font-size: .55em; opacity:.75 }
+    .meta{ display:flex; gap:10px; flex-wrap:wrap; font-size:13px; opacity:.75; margin-bottom:18px }
+    .bar{ background:var(--bar); height:1.1em; display:inline-block; vertical-align:middle; min-width:9ch }
+    .redact{ background:var(--bar); color:transparent; border-radius:2px; padding: 0 .35em }
+    .img{ background:#111; height:220px; margin:18px 0; position:relative; overflow:hidden }
+    .img::after{ content:"IMAGEM REDIGIDA"; position:absolute; inset:auto 0 0 0; text-align:center; padding:6px 0; font-size:12px; letter-spacing:.15em; color:#eee; background:linear-gradient(90deg, #111, #333, #111) }
+    p{ line-height:1.55 }
+    code{ background:#eee8; padding:.1em .35em; border-radius:3px }
+    .footer{ margin-top:24px; font-size:12px; opacity:.7 }
+  </style>
+</head>
+<body>
+  <article class="sheet">
+    <div class="stamp">ULTRASSECRETO</div>
+    <h1>RELATÓRIO DA H-9 — UMBRA <small>PROJETO HÓRUS / AURORA‑7</small></h1>
+    <div class="meta">
+      <div>Ref.: H‑9/2025‑<span class="bar"></span></div>
+      <div>Responsável: <span class="bar" style="min-width:14ch"></span></div>
+      <div>Nível: <strong>Vermelho‑N</strong></div>
+    </div>
+
+    <div class="img"></div>
+
+    <p>Observou‑se que a exposição continuada à <strong>Umbra</strong> desencadeia respostas anômalas no SNC. Amostras coletadas em <span class="redact">Recife</span> e <span class="redact">Campinas</span> apresentam atividade biofotônica acima do esperado. O uso repetido das habilidades por indivíduos <em>Alterados</em> correlaciona‑se com aumento de 18–27% na densidade atmosférica local.</p>
+
+    <p>Recomenda‑se <strong>não</strong> divulgar: a hipótese de retroalimentação entre Alterados e Umbra; o índice de fatalidade em testes de <code>Ativação Fase‑3</code>; a existência da <span class="redact">Sala 17</span>.</p>
+
+    <p><em>Nota:</em> A Umbra responde a estímulos luminosos pulsantes (≥ 8 Hz). Protocolos de contenção revisados para incluir varredura fotônica intermitente e isolamento térmico.</p>
+
+    <div class="footer">Distribuição: Conselho Nacional de Defesa | ABSN | Helix. — Qualquer reprodução é crime federal (Art. ███).</div>
+  </article>
+</body>
+</html>
