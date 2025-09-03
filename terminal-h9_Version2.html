@@ -1,0 +1,67 @@
+<!-- =============================================
+  TERMINAL H-9 — TERMINAL FAKE (login + typewriter)
+============================================== -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Terminal H-9 — Aurora-7</title>
+  <style>
+    :root{ --bg:#02060a; --green:#8dffb0; --dim:#6ee7b7; }
+    html,body{height:100%}
+    body{ margin:0; background:radial-gradient(800px 400px at 50% 15%, #06121a 0%, #02060a 70%); color:var(--green); font-family: ui-monospace, Menlo, Monaco, Consolas, "Courier New", monospace; display:grid; place-items:center; }
+    .term{ width:min(900px, 92vw); min-height:60vh; border:2px solid #0b1f29; background:#000000dd; padding:18px; box-shadow:0 30px 80px rgba(0,0,0,.6); position:relative; }
+    .bar{ position:absolute; inset:0; background:repeating-linear-gradient( to bottom, rgba(255,255,255,.06) 0 1px, rgba(0,0,0,0) 1px 3px ); pointer-events:none; mix-blend-mode:overlay }
+    .line{ white-space:pre-wrap; }
+    .cursor{ display:inline-block; width:.6ch; background:var(--green); animation:blink 1s steps(2) infinite; }
+    @keyframes blink{50%{opacity:0}}
+    a{ color:var(--dim) }
+  </style>
+</head>
+<body>
+  <div class="term" id="term">
+    <div class="bar"></div>
+    <div class="line">Aurora-7 Secure Shell v2.5</div>
+    <div class="line">Conexão: <span id="host"></span></div>
+    <div class="line">Digite a credencial para continuar.</div>
+    <div class="line">login: <span class="cursor"></span></div>
+  </div>
+
+  <script>
+    const host = location.hostname || "localhost";
+    document.getElementById('host').textContent = host;
+
+    const term = document.getElementById('term');
+    const lines = [
+      "login: horus_admin",
+      "senha: ********",
+      "autenticando…",
+      "ERRO 403 — credencial inválida",
+      "$ tail -n 3 /var/log/umbra/alerts.log",
+      "[WARN] densidade ↑ 19% — setor C",
+      "[WARN] atividade biofotônica detectada",
+      "[ALERTA] abertura anômala — SALA 17",
+      "$ echo 'Procure o Canal H-9'",
+      "Procure o Canal H-9",
+      "$ _"
+    ];
+
+    let idx = 0; let typing = false;
+    function typeNext(){
+      if(typing || idx >= lines.length) return;
+      typing = true;
+      const text = lines[idx++];
+      const row = document.createElement('div'); row.className = 'line'; term.appendChild(row);
+      let i=0; const speed = 12 + Math.random()*30;
+      (function type(){
+        row.textContent = text.slice(0, i++);
+        if(i<=text.length){ setTimeout(type, speed); }
+        else { typing=false; setTimeout(typeNext, 400); }
+      })();
+    }
+    setTimeout(typeNext, 800);
+    term.addEventListener('click', typeNext);
+  </script>
+</body>
+</html>
